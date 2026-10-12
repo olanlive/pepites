@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pépites</title>
+<meta name="theme-color" content="#0f1419">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Pépites">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#0f1419;color:#e6edf3;font-family:system-ui,-apple-system,sans-serif}
+main{min-height:100%;display:flex;flex-direction:column;gap:14px;padding:calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom))}
+h1{margin:4px 0 6px;text-align:center;font-size:1.6rem}
+a{flex:1;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;font-size:1.5rem;font-weight:700;text-decoration:none;color:#0f1419;padding:12px}
+a:active{filter:brightness(.9)}
+.b3d{background:#6cb6ff}.bav{background:#5fd38d}.bit{background:#ffb347}.ban{background:#ffd60a}
+</style>
+</head>
+<body>
+<main>
+<h1>Pépites 💎</h1>
+<a class="b3d" href="https://olanlive.github.io/revue-oss-3d/">Pépites 3D &amp; VFX</a>
+<a class="bav" href="https://olanlive.github.io/revue-audio-video/">Pépites Audio &amp; Vidéo</a>
+<a class="bit" href="https://olanlive.github.io/revue-outils-it/">Pépites Outils IT</a>
+<a class="ban" href="https://olanlive.github.io/revue-animation/">Pépites Animation</a>
+</main>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');</script>
+</body>
+</html>
