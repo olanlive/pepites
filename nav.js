@@ -40,15 +40,15 @@
     var here = location.href;
     var css = document.createElement("style");
     css.textContent =
-      "#pepites-nav{background:#0f1419;border-bottom:1px solid #2d3a4f;font:600 14px/1.2 system-ui,-apple-system,sans-serif}" +
+      "#pepites-nav{background:#0f1419;border-bottom:1px solid #2d3a4f;font:600 clamp(14px, 2vw, 16px)/1.2 system-ui,-apple-system,sans-serif}" +
       "#pepites-nav ul{display:flex;gap:6px;margin:0 auto;padding:6px 8px;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:1100px}" +
       "#pepites-nav ul::-webkit-scrollbar{display:none}" +
       "#pepites-nav li{flex:none;margin:0;padding:0}" +
-      "#pepites-nav a,#pepites-nav span{position:relative;display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border-radius:999px;text-decoration:none;white-space:nowrap;color:#0f1419;border:2px solid transparent}" +
+      "#pepites-nav a,#pepites-nav span{position:relative;display:inline-flex;align-items:center;min-height:2.4em;padding:0 .85em;border-radius:999px;text-decoration:none;white-space:nowrap;color:#0f1419;border:2px solid transparent}" +
       "#pepites-nav a{opacity:.82}#pepites-nav a:hover,#pepites-nav a:focus-visible{opacity:1}" +
       "#pepites-nav a:focus-visible{outline:2px solid #fff;outline-offset:2px}" +
       "#pepites-nav span[aria-current]{border-color:#fff;box-shadow:0 0 0 2px #0f1419 inset}" +
-      "#pepites-nav .pn-new{position:static;display:block;flex:none;align-self:center;box-sizing:border-box;width:24px;height:24px;min-width:24px;min-height:24px;margin:0 0 0 8px;padding:0;border:0;border-radius:50%;background:#ff2a3c;box-shadow:none;transform:none;pointer-events:none}" +
+      "#pepites-nav .pn-new{position:static;display:block;flex:none;align-self:center;box-sizing:border-box;width:1.15em;height:1.15em;min-width:1.15em;min-height:1.15em;margin:0 0 0 .45em;padding:0;border:0;border-radius:50%;background:#ff2a3c;box-shadow:0 0 0 2px #fff;transform:none;pointer-events:none}" +
       "#pepites-nav .pn-home{background:#1a2332;color:#e6edf3;opacity:1}";
     document.head.appendChild(css);
     var nav = document.createElement("nav");
