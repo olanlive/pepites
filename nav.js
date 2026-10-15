@@ -48,7 +48,7 @@
       "#pepites-nav a{opacity:.82}#pepites-nav a:hover,#pepites-nav a:focus-visible{opacity:1}" +
       "#pepites-nav a:focus-visible{outline:2px solid #fff;outline-offset:2px}" +
       "#pepites-nav span[aria-current]{border-color:#fff;box-shadow:0 0 0 2px #0f1419 inset}" +
-      "#pepites-nav .pn-new{position:absolute;top:50%;right:4px;width:8px;height:8px;margin:0;padding:0;min-height:0;border:0;border-radius:50%;background:#ff3b4e;box-shadow:none;transform:translateY(-50%);pointer-events:none}" +
+      "#pepites-nav .pn-new{position:static;display:block;flex:none;align-self:center;width:1.15em;height:1.15em;min-width:1.15em;min-height:0;margin:0 0 0 .55em;padding:0;border:0;border-radius:50%;background:#ff2a3c;box-shadow:0 0 0 2px #0f1419;transform:none;pointer-events:none}" +
       "#pepites-nav .pn-home{background:#1a2332;color:#e6edf3;opacity:1}";
     document.head.appendChild(css);
     var nav = document.createElement("nav");
