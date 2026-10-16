@@ -7,7 +7,8 @@
     { name: "3D & VFX",      url: "https://olanlive.github.io/revue-oss-3d/",      color: "#6cb6ff" },
     { name: "Audio & Vidéo", url: "https://olanlive.github.io/revue-audio-video/", color: "#5fd38d" },
     { name: "Outils IT",     url: "https://olanlive.github.io/revue-outils-it/",   color: "#ffb347" },
-    { name: "Animation",     url: "https://olanlive.github.io/revue-animation/",   color: "#ffd60a" }
+    { name: "Animation",     url: "https://olanlive.github.io/revue-animation/",   color: "#ffd60a" },
+    { name: "Typo",          url: "https://olanlive.github.io/revue-typographie/", color: "#c084fc" }
   ];
   var KEY = "pepites-seen";
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
