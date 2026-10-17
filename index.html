@@ -18,8 +18,8 @@ html,body{margin:0;height:100%;background:#0f1419;color:#e6edf3;font-family:syst
 main{min-height:100%;display:flex;flex-direction:column;gap:14px;padding:calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom))}
 a{text-decoration:none}
 .blogs{flex:1;display:flex;flex-direction:column;gap:14px}
-/* Cartes des blogs. Image de fond légère prévue : définir --bg-img par blog, ex. .b3d{--bg-img:url(img/3d.webp)} */
-.blogs a{flex:1;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;font-size:1.5rem;font-weight:700;color:#0f1419;padding:12px;background-color:var(--c);background-image:var(--bg-img,none);background-size:cover;background-position:center;background-repeat:no-repeat}
+/* Cartes des blogs : image de fond (--bg-img, img/*.webp) sous un voile de la couleur du blog (--veil). Contraste mini mesuré du texte #0f1419 : 3D 4,1:1 ; Audio 4,6 ; IT 4,7 ; Animation 6,2 ; Typo 4,7 (AA texte large ≥ 3:1). */
+.blogs a{flex:1;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;font-size:1.5rem;font-weight:700;color:#0f1419;padding:12px;background-color:var(--c);background-image:linear-gradient(var(--veil),var(--veil)),var(--bg-img,none);background-size:cover;background-position:center;background-repeat:no-repeat}
 .blogs a:active{filter:brightness(.9)}
 header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 6px}
 .top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -35,7 +35,11 @@ a.gh svg{width:20px;height:20px;fill:currentColor}
 a .new{margin-left:10px;padding:2px 8px;border-radius:999px;background:#0f1419;color:#fff;font-size:.8rem;font-weight:700;vertical-align:middle}
 .sub{margin:2px 0 0;font-size:.85rem;font-weight:500;color:#9aa8bc}
 header .brand{display:flex;flex-direction:column}
-.b3d{--c:#6cb6ff;--bg-img:none}.bav{--c:#5fd38d;--bg-img:none}.bit{--c:#ffb347;--bg-img:none}.ban{--c:#ffd60a;--bg-img:none}.bty{--c:#c084fc;--bg-img:none}
+.b3d{--c:#6cb6ff;--veil:rgba(108,182,255,.65);--bg-img:url(img/3d-vfx.webp)}
+.bav{--c:#5fd38d;--veil:rgba(95,211,141,.65);--bg-img:url(img/audio-video.webp)}
+.bit{--c:#ffb347;--veil:rgba(255,179,71,.65);--bg-img:url(img/outils-it.webp)}
+.ban{--c:#ffd60a;--veil:rgba(255,214,10,.65);--bg-img:url(img/animation.webp)}
+.bty{--c:#c084fc;--veil:rgba(192,132,252,.78);--bg-img:url(img/typographie.webp)}
 /* Grands écrans : colonne centrée de 960 px, cartes en grille */
 @media (min-width:720px){
 main{max-width:960px;margin:0 auto;min-height:0;padding-top:calc(24px + env(safe-area-inset-top))}
