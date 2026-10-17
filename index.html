@@ -19,9 +19,16 @@ main{min-height:100%;display:flex;flex-direction:column;gap:14px;padding:calc(16
 a{flex:1;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;font-size:1.5rem;font-weight:700;text-decoration:none;color:#0f1419;padding:12px}
 a:active{filter:brightness(.9)}
 header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 6px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.top .right{display:flex;align-items:center;gap:8px}
+.top a.back{flex:none;min-height:44px;display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;font-size:1rem;font-weight:600;color:#e6edf3;background:#1a2332;border:1px solid #2d3a4f}
+.lang{display:inline-flex;border:1px solid #2d3a4f;border-radius:999px;overflow:hidden;background:#1a2332}
+.lang button{min-width:48px;min-height:44px;padding:0 12px;border:0;background:transparent;color:#9aa8bc;font:600 1rem system-ui,-apple-system,sans-serif;cursor:pointer;-webkit-appearance:none;appearance:none}
+.lang button[aria-pressed="true"]{background:#e6edf3;color:#0f1419}
+.lang button:focus-visible,.top a.back:focus-visible,a.gh:focus-visible{outline:2px solid #fff;outline-offset:2px}
 h1{margin:0;font-size:1.6rem}
-header a.gh{flex:none;min-height:0;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;font-size:1rem;font-weight:600;color:#e6edf3;background:#1a2332;border:1px solid #2d3a4f}
-header a.gh svg{width:20px;height:20px;fill:currentColor}
+a.gh{flex:none;min-height:44px;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;font-size:1rem;font-weight:600;color:#e6edf3;background:#1a2332;border:1px solid #2d3a4f}
+a.gh svg{width:20px;height:20px;fill:currentColor}
 a .new{margin-left:10px;padding:2px 8px;border-radius:999px;background:#0f1419;color:#fff;font-size:.8rem;font-weight:700;vertical-align:middle}
 .sub{margin:2px 0 0;font-size:.85rem;font-weight:500;color:#9aa8bc}
 header .brand{display:flex;flex-direction:column}
@@ -30,7 +37,8 @@ header .brand{display:flex;flex-direction:column}
 </head>
 <body>
 <main>
-<header><h1>Pépites 💎</h1><a class="gh" href="https://github.com/olanlive"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></header>
+<div class="top"><a class="back" href="https://olanlive.github.io/" aria-label="Retour à olanlive">← olanlive</a><div class="right"><div class="lang" role="group" aria-label="Langue"><button type="button" data-lang="fr" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div><a class="gh" href="https://github.com/olanlive"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a></div></div>
+<header><div class="brand"><h1 id="title">Pépites 💎</h1><p class="sub" id="sub" hidden>Daily gems</p></div></header>
 <a class="b3d" href="https://olanlive.github.io/revue-oss-3d/" data-blog="https://olanlive.github.io/revue-oss-3d/">Pépites 3D &amp; VFX</a>
 <a class="bav" href="https://olanlive.github.io/revue-audio-video/" data-blog="https://olanlive.github.io/revue-audio-video/">Pépites Audio &amp; Vidéo</a>
 <a class="bit" href="https://olanlive.github.io/revue-outils-it/" data-blog="https://olanlive.github.io/revue-outils-it/">Pépites Outils IT</a>
@@ -41,41 +49,52 @@ header .brand{display:flex;flex-direction:column}
 <script src="nav.js"></script>
 <script>
 (function () {
-  var lang = "fr";
-  try { if (localStorage.getItem("pepites-lang") === "en") lang = "en"; } catch (e) {}
-  if (lang === "en") {
-    document.documentElement.lang = "en";
-    var h1 = document.querySelector("main h1");
-    if (h1) {
-      var wrap = document.createElement("div");
-      wrap.className = "brand";
-      h1.parentNode.insertBefore(wrap, h1);
-      wrap.appendChild(h1);
-      h1.textContent = "Gems 💎";
-      var sub = document.createElement("p");
-      sub.className = "sub";
-      sub.textContent = "Daily gems";
-      wrap.appendChild(sub);
-    }
-    var labels = {
-      "https://olanlive.github.io/revue-oss-3d/": "3D & VFX Gems",
-      "https://olanlive.github.io/revue-audio-video/": "Audio & Video Gems",
-      "https://olanlive.github.io/revue-outils-it/": "IT Tools Gems",
-      "https://olanlive.github.io/revue-animation/": "Animation Gems",
-      "https://olanlive.github.io/revue-typographie/": "Typography Gems"
-    };
+  var KEY = "pepites-lang";
+  var T = {
+    fr: { title: "Pépites", h1: "Pépites 💎", sub: "", back: "Retour à olanlive", langGroup: "Langue", gh: "GitHub", isNew: "nouveau",
+      blogs: { "https://olanlive.github.io/revue-oss-3d/": "Pépites 3D & VFX", "https://olanlive.github.io/revue-audio-video/": "Pépites Audio & Vidéo",
+        "https://olanlive.github.io/revue-outils-it/": "Pépites Outils IT", "https://olanlive.github.io/revue-animation/": "Pépites Animation",
+        "https://olanlive.github.io/revue-typographie/": "Pépites Typo" } },
+    en: { title: "Gems", h1: "Gems 💎", sub: "Daily gems", back: "Back to olanlive", langGroup: "Language", gh: "GitHub", isNew: "new",
+      blogs: { "https://olanlive.github.io/revue-oss-3d/": "3D & VFX Gems", "https://olanlive.github.io/revue-audio-video/": "Audio & Video Gems",
+        "https://olanlive.github.io/revue-outils-it/": "IT Tools Gems", "https://olanlive.github.io/revue-animation/": "Animation Gems",
+        "https://olanlive.github.io/revue-typographie/": "Typography Gems" } }
+  };
+  function load() { try { return localStorage.getItem(KEY) === "en" ? "en" : "fr"; } catch (e) { return "fr"; } }
+  function save(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  var lang = load();
+  function label(a, text) {
+    var dot = a.querySelector(".new");
+    a.textContent = text;
+    if (dot) { dot.textContent = T[lang].isNew; a.appendChild(dot); }
+  }
+  function apply(l) {
+    lang = l; var t = T[l];
+    document.documentElement.lang = l;
+    document.title = t.title;
+    document.getElementById("title").textContent = t.h1;
+    var sub = document.getElementById("sub"); sub.textContent = t.sub; sub.hidden = !t.sub;
+    var back = document.querySelector(".top a.back"); back.setAttribute("aria-label", t.back);
+    document.querySelector(".lang").setAttribute("aria-label", t.langGroup);
+    [].forEach.call(document.querySelectorAll(".lang button"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === l));
+    });
     [].forEach.call(document.querySelectorAll("a[data-blog]"), function (a) {
       var u = a.getAttribute("data-blog");
-      if (u) a.setAttribute("href", u + "en/");
-      if (labels[u]) a.textContent = labels[u];
+      a.setAttribute("href", u + (l === "en" ? "en/" : ""));
+      if (t.blogs[u]) label(a, t.blogs[u]);
     });
   }
+  [].forEach.call(document.querySelectorAll(".lang button"), function (b) {
+    b.addEventListener("click", function () { var l = b.getAttribute("data-lang"); save(l); apply(l); });
+  });
+  apply(lang);
   if (window.PepitesNav) PepitesNav.checkNew(function (b) {
     var a = document.querySelector('[data-blog="' + b.url + '"]');
     if (!a || a.querySelector(".new")) return;
     var s = document.createElement("span");
     s.className = "new";
-    s.textContent = lang === "en" ? "new" : "nouveau";
+    s.textContent = T[lang].isNew;
     a.appendChild(s);
   });
 })();
