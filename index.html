@@ -23,6 +23,8 @@ h1{margin:0;font-size:1.6rem}
 header a.gh{flex:none;min-height:0;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;font-size:1rem;font-weight:600;color:#e6edf3;background:#1a2332;border:1px solid #2d3a4f}
 header a.gh svg{width:20px;height:20px;fill:currentColor}
 a .new{margin-left:10px;padding:2px 8px;border-radius:999px;background:#0f1419;color:#fff;font-size:.8rem;font-weight:700;vertical-align:middle}
+.sub{margin:2px 0 0;font-size:.85rem;font-weight:500;color:#9aa8bc}
+header .brand{display:flex;flex-direction:column}
 .b3d{background:#6cb6ff}.bav{background:#5fd38d}.bit{background:#ffb347}.ban{background:#ffd60a}.bty{background:#c084fc}
 </style>
 </head>
@@ -38,7 +40,45 @@ a .new{margin-left:10px;padding:2px 8px;border-radius:999px;background:#0f1419;c
 <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');</script>
 <script src="nav.js"></script>
 <script>
-if(window.PepitesNav)PepitesNav.checkNew(function(b){var a=document.querySelector('[data-blog="'+b.url+'"]');if(!a||a.querySelector('.new'))return;var s=document.createElement('span');s.className='new';s.textContent='nouveau';a.appendChild(s);});
+(function () {
+  var lang = "fr";
+  try { if (localStorage.getItem("pepites-lang") === "en") lang = "en"; } catch (e) {}
+  if (lang === "en") {
+    document.documentElement.lang = "en";
+    var h1 = document.querySelector("main h1");
+    if (h1) {
+      var wrap = document.createElement("div");
+      wrap.className = "brand";
+      h1.parentNode.insertBefore(wrap, h1);
+      wrap.appendChild(h1);
+      h1.textContent = "Gems 💎";
+      var sub = document.createElement("p");
+      sub.className = "sub";
+      sub.textContent = "Daily gems";
+      wrap.appendChild(sub);
+    }
+    var labels = {
+      "https://olanlive.github.io/revue-oss-3d/": "3D & VFX Gems",
+      "https://olanlive.github.io/revue-audio-video/": "Audio & Video Gems",
+      "https://olanlive.github.io/revue-outils-it/": "IT Tools Gems",
+      "https://olanlive.github.io/revue-animation/": "Animation Gems",
+      "https://olanlive.github.io/revue-typographie/": "Typo Gems"
+    };
+    [].forEach.call(document.querySelectorAll("a[data-blog]"), function (a) {
+      var u = a.getAttribute("data-blog");
+      if (u) a.setAttribute("href", u + "en/");
+      if (labels[u]) a.textContent = labels[u];
+    });
+  }
+  if (window.PepitesNav) PepitesNav.checkNew(function (b) {
+    var a = document.querySelector('[data-blog="' + b.url + '"]');
+    if (!a || a.querySelector(".new")) return;
+    var s = document.createElement("span");
+    s.className = "new";
+    s.textContent = lang === "en" ? "new" : "nouveau";
+    a.appendChild(s);
+  });
+})();
 </script>
 </body>
 </html>
