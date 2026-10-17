@@ -5,10 +5,10 @@
   var HOME = "https://olanlive.github.io/pepites/";
   var BLOGS = [
     { name: "3D & VFX",      name_en: "3D & VFX",      url: "https://olanlive.github.io/revue-oss-3d/",      color: "#6cb6ff" },
-    { name: "Audio & Vidéo", name_en: "Audio & Video", url: "https://olanlive.github.io/revue-audio-video/", color: "#5fd38d" },
-    { name: "Outils IT",     name_en: "IT Tools",      url: "https://olanlive.github.io/revue-outils-it/",   color: "#ffb347" },
     { name: "Animation",     name_en: "Animation",     url: "https://olanlive.github.io/revue-animation/",   color: "#ffd60a" },
-    { name: "Typo",          name_en: "Typo",          url: "https://olanlive.github.io/revue-typographie/", color: "#c084fc" }
+    { name: "Audio & Vidéo", name_en: "Audio & Video", url: "https://olanlive.github.io/revue-audio-video/", color: "#5fd38d" },
+    { name: "Typo",          name_en: "Typo",          url: "https://olanlive.github.io/revue-typographie/", color: "#c084fc" },
+    { name: "Outils IT",     name_en: "IT Tools",      url: "https://olanlive.github.io/revue-outils-it/",   color: "#ffb347" }
   ];
   var KEY = "pepites-seen";
   var LANG_KEY = "pepites-lang";

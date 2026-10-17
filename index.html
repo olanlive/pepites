@@ -56,10 +56,10 @@ main{max-width:960px;margin:0 auto;min-height:0;padding-top:calc(24px + env(safe
 <header><div class="brand"><h1 id="title">Pépites 💎</h1><p class="sub" id="sub">Le blog des pépites</p></div></header>
 <nav class="blogs">
 <a class="b3d" href="https://olanlive.github.io/revue-oss-3d/" data-blog="https://olanlive.github.io/revue-oss-3d/">Pépites 3D &amp; VFX</a>
-<a class="bav" href="https://olanlive.github.io/revue-audio-video/" data-blog="https://olanlive.github.io/revue-audio-video/">Pépites Audio &amp; Vidéo</a>
-<a class="bit" href="https://olanlive.github.io/revue-outils-it/" data-blog="https://olanlive.github.io/revue-outils-it/">Pépites Outils IT</a>
 <a class="ban" href="https://olanlive.github.io/revue-animation/" data-blog="https://olanlive.github.io/revue-animation/">Pépites Animation</a>
+<a class="bav" href="https://olanlive.github.io/revue-audio-video/" data-blog="https://olanlive.github.io/revue-audio-video/">Pépites Audio &amp; Vidéo</a>
 <a class="bty" href="https://olanlive.github.io/revue-typographie/" data-blog="https://olanlive.github.io/revue-typographie/">Pépites Typo</a>
+<a class="bit" href="https://olanlive.github.io/revue-outils-it/" data-blog="https://olanlive.github.io/revue-outils-it/">Pépites Outils IT</a>
 </nav>
 </main>
 <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');</script>
@@ -69,13 +69,13 @@ main{max-width:960px;margin:0 auto;min-height:0;padding-top:calc(24px + env(safe
   var KEY = "pepites-lang";
   var T = {
     fr: { title: "Pépites", h1: "Pépites 💎", sub: "Le blog des pépites", back: "Retour à olanlive", langGroup: "Langue", gh: "GitHub", isNew: "nouveau",
-      blogs: { "https://olanlive.github.io/revue-oss-3d/": "Pépites 3D & VFX", "https://olanlive.github.io/revue-audio-video/": "Pépites Audio & Vidéo",
-        "https://olanlive.github.io/revue-outils-it/": "Pépites Outils IT", "https://olanlive.github.io/revue-animation/": "Pépites Animation",
-        "https://olanlive.github.io/revue-typographie/": "Pépites Typo" } },
+      blogs: { "https://olanlive.github.io/revue-oss-3d/": "Pépites 3D & VFX", "https://olanlive.github.io/revue-animation/": "Pépites Animation",
+        "https://olanlive.github.io/revue-audio-video/": "Pépites Audio & Vidéo", "https://olanlive.github.io/revue-typographie/": "Pépites Typo",
+        "https://olanlive.github.io/revue-outils-it/": "Pépites Outils IT" } },
     en: { title: "Gems", h1: "Gems 💎", sub: "The gems blog", back: "Back to olanlive", langGroup: "Language", gh: "GitHub", isNew: "new",
-      blogs: { "https://olanlive.github.io/revue-oss-3d/": "3D & VFX Gems", "https://olanlive.github.io/revue-audio-video/": "Audio & Video Gems",
-        "https://olanlive.github.io/revue-outils-it/": "IT Tools Gems", "https://olanlive.github.io/revue-animation/": "Animation Gems",
-        "https://olanlive.github.io/revue-typographie/": "Typography Gems" } }
+      blogs: { "https://olanlive.github.io/revue-oss-3d/": "3D & VFX Gems", "https://olanlive.github.io/revue-animation/": "Animation Gems",
+        "https://olanlive.github.io/revue-audio-video/": "Audio & Video Gems", "https://olanlive.github.io/revue-typographie/": "Typography Gems",
+        "https://olanlive.github.io/revue-outils-it/": "IT Tools Gems" } }
   };
   function load() { try { return localStorage.getItem(KEY) === "en" ? "en" : "fr"; } catch (e) { return "fr"; } }
   function save(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
