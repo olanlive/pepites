@@ -18,8 +18,8 @@ html,body{margin:0;height:100%;background:#0f1419;color:#e6edf3;font-family:syst
 main{min-height:100%;display:flex;flex-direction:column;gap:14px;padding:calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom))}
 a{text-decoration:none}
 .blogs{flex:1;display:flex;flex-direction:column;gap:14px}
-/* Cartes des blogs : image de fond (--bg-img, img/*.webp) sous un voile léger de la couleur du blog (--rgb, opacité --va), plus un halo de la même couleur derrière le texte et une lueur (text-shadow). Contraste mini mesuré du texte #0f1419 sur les pixels réels : 3D 4,0:1 ; Audio 3,6 ; IT 4,1 ; Animation 5,2 ; Typo 3,7 (règle : ≥ 3:1 pour ce texte gros et gras). */
-.blogs a{flex:1;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;font-size:1.5rem;font-weight:700;color:#0f1419;padding:12px;background-color:var(--c);background-image:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(var(--rgb),.4) 0%,rgba(var(--rgb),.4) 35%,rgba(var(--rgb),0) 100%),linear-gradient(rgba(var(--rgb),var(--va)),rgba(var(--rgb),var(--va))),var(--bg-img,none);text-shadow:0 0 8px rgba(var(--rgb),.7);background-size:cover;background-position:center;background-repeat:no-repeat}
+/* Cartes des blogs (v10, préférence d'Olivier : cartes claires et vives, image visible, ni vignette ni halo sombre). Couches : image en fusion « screen » (ne fait qu'éclaircir, fait ressortir les formes), voile de la couleur du blog à .6, image. Contraste mini mesuré du texte #0f1419 sur les pixels réels (FR/EN, 1280 et 390 px) : voir JOURNAL 17/10. */
+.blogs a{flex:1;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;font-size:1.5rem;font-weight:700;color:#0f1419;padding:12px;background-color:var(--c);background-image:var(--bg-img,none),linear-gradient(rgba(var(--rgb),.6),rgba(var(--rgb),.6)),var(--bg-img,none);background-blend-mode:screen,normal,normal;background-size:cover;background-position:center;background-repeat:no-repeat}
 .blogs a:active{filter:brightness(.9)}
 header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 6px}
 .top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
@@ -35,11 +35,11 @@ a.gh svg{width:20px;height:20px;fill:currentColor}
 a .new{text-shadow:none;margin-left:10px;padding:2px 8px;border-radius:999px;background:#0f1419;color:#fff;font-size:.8rem;font-weight:700;vertical-align:middle}
 .sub{margin:2px 0 0;font-size:.85rem;font-weight:500;color:#9aa8bc}
 header .brand{display:flex;flex-direction:column}
-.b3d{--c:#6cb6ff;--rgb:108,182,255;--va:.42;--bg-img:url(img/3d-vfx.webp)}
-.bav{--c:#5fd38d;--rgb:95,211,141;--va:.42;--bg-img:url(img/audio-video.webp)}
-.bit{--c:#ffb347;--rgb:255,179,71;--va:.42;--bg-img:url(img/outils-it.webp)}
-.ban{--c:#ffd60a;--rgb:255,214,10;--va:.42;--bg-img:url(img/animation.webp)}
-.bty{--c:#c084fc;--rgb:192,132,252;--va:.48;--bg-img:url(img/typographie.webp)}
+.b3d{--c:#6cb6ff;--rgb:108,182,255;--bg-img:url(img/3d-vfx.webp)}
+.bav{--c:#5fd38d;--rgb:95,211,141;--bg-img:url(img/audio-video.webp)}
+.bit{--c:#ffb347;--rgb:255,179,71;--bg-img:url(img/outils-it.webp)}
+.ban{--c:#ffd60a;--rgb:255,214,10;--bg-img:url(img/animation.webp)}
+.bty{--c:#c084fc;--rgb:192,132,252;--bg-img:url(img/typographie.webp)}
 /* Grands écrans : colonne centrée de 960 px, cartes en grille */
 @media (min-width:720px){
 main{max-width:960px;margin:0 auto;min-height:0;padding-top:calc(24px + env(safe-area-inset-top))}
