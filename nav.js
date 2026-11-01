@@ -61,12 +61,16 @@
       "#pepites-nav{background:#0f1419;border-bottom:1px solid #2d3a4f;font:600 clamp(14px, 2vw, 16px)/1.2 system-ui,-apple-system,sans-serif}" +
       "#pepites-nav ul{display:flex;gap:6px;margin:0 auto;padding:6px 8px;list-style:none;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:1100px}" +
       "#pepites-nav ul::-webkit-scrollbar{display:none}" +
+      /* 💎 et FR/EN hors de la zone qui défile : seule la liste des blogs (li.pn-scroll > ul) défile. */
+      "#pepites-nav>ul{overflow:visible}" +
+      "#pepites-nav li.pn-scroll{flex:0 1 auto;min-width:0;display:flex}" +
+      "#pepites-nav li.pn-scroll>ul{flex:1 1 auto;min-width:0;max-width:none;margin:-6px;padding:6px}" +
       "#pepites-nav li{flex:none;margin:0;padding:0}" +
       "#pepites-nav a,#pepites-nav span,#pepites-nav button.pn-lang{position:relative;display:inline-flex;align-items:center;min-height:2.4em;padding:0 .85em;border-radius:999px;text-decoration:none;white-space:nowrap;color:#0f1419;border:2px solid transparent}" +
       "#pepites-nav a{opacity:.82}#pepites-nav a:hover,#pepites-nav a:focus-visible{opacity:1}" +
       "#pepites-nav a:focus-visible,#pepites-nav button.pn-lang:focus-visible{outline:2px solid #fff;outline-offset:2px}" +
       "#pepites-nav span[aria-current]{border-color:#fff;box-shadow:0 0 0 2px #0f1419 inset}" +
-      "#pepites-nav .pn-new{position:static;display:block;flex:none;align-self:center;box-sizing:border-box;width:1.15em;height:1.15em;min-width:1.15em;min-height:1.15em;margin:0 0 0 .45em;padding:0;border:0;border-radius:50%;background:#ff2a3c;box-shadow:0 0 0 2px #fff;transform:none;pointer-events:none}" +
+      "#pepites-nav .pn-new{position:absolute;top:-.2em;right:2px;display:block;box-sizing:border-box;width:.8em;height:.8em;min-width:0;min-height:0;margin:0;padding:0;border:0;border-radius:50%;background:#ff2a3c;box-shadow:0 0 0 2px #fff;transform:none;pointer-events:none}" +
       "#pepites-nav .pn-home{background:#1a2332;color:#e6edf3;opacity:1}" +
       "#pepites-nav button.pn-lang{background:#1a2332;color:#e6edf3;opacity:1;font:inherit;font-weight:600;cursor:pointer;-webkit-appearance:none;appearance:none}";
     document.head.appendChild(css);
@@ -79,6 +83,8 @@
     home.setAttribute("aria-label", lang === "en" ? "Gems page" : "Page Pépites");
     home.title = lang === "en" ? "Gems" : "Pépites";
     li.appendChild(home); ul.appendChild(li);
+    var liScroll = document.createElement("li"), track = document.createElement("ul");
+    liScroll.className = "pn-scroll"; liScroll.appendChild(track); ul.appendChild(liScroll);
     BLOGS.forEach(function (b) {
       var li = document.createElement("li");
       var cur = here.indexOf(b.url) === 0;
@@ -88,7 +94,7 @@
       el.textContent = lang === "en" ? b.name_en : b.name;
       el.setAttribute("data-blog", b.url);
       el.style.background = b.color;
-      li.appendChild(el); ul.appendChild(li);
+      li.appendChild(el); track.appendChild(li);
     });
     var liLang = document.createElement("li");
     var btn = document.createElement("button");
@@ -117,8 +123,8 @@
       dot.title = lang === "en" ? "New" : "Nouveau";
       el.appendChild(dot);
     });
-    var c = ul.querySelector("[aria-current]");
-    if (c && c.scrollIntoView) ul.scrollLeft = c.offsetLeft - 8;
+    var c = track.querySelector("[aria-current]");
+    if (c) track.scrollLeft += c.getBoundingClientRect().left - track.getBoundingClientRect().left - 6;
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
