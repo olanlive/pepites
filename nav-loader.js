@@ -2,7 +2,7 @@
    Pour publier un nouveau nav.js : changer V ici seulement (aucun commit dans les blogs).
    Pages sert ce fichier avec max-age=600 : le changement arrive en 10 min au plus. */
 (function () {
-  var V = 7;
+  var V = 8;
   if (document.getElementById("pepites-nav-js")) return;
   var s = document.createElement("script");
   s.id = "pepites-nav-js";
